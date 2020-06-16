@@ -11,15 +11,17 @@
 */
 
 export default (start, end) => {
+    if(!start || !end) return 0
+
     const [times, tags] = start.split(' ')
     const [timet, tagt] = end.split(' ')
     const startStr = +new Date(...times.split('-'))
     const endStr = +new Date(...timet.split('-'))
-    const timeGap = tagt === tags ? 0.5 : {'上午': 'error', '下午': 1 }[tagt] // 当天
+    const timeGap = tagt === tags ? 0.5 : {'上午': 0, '下午': 1 }[tagt] // 当天
     const timeGapt = tagt === tags ? 0.5 : {'上午': 0, '下午': 1 }[tagt] // 隔天
     
     if(startStr > endStr) {
-        return 'error'
+        return 0
     }
     else if(timet === times) {
         return timeGap

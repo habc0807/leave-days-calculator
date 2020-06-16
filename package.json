@@ -1,6 +1,6 @@
 {
   "name": "leave-days-calculator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "一个简单的请假天数计算器",
   "main": "dist/index.js",
   "scripts": {
