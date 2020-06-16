@@ -28,8 +28,8 @@ function isLeapYear (year) {
  * @param {*} month 
  */
 function getMaxDay (year, month) {
-    year = parseFloat(year)
-    month = parseFloat(month)
+    year = parseInt(year)
+    month = parseInt(month)
     if (month === 2) {
         return isLeapYear(year) ? 29 : 28
     }
@@ -40,7 +40,7 @@ function getMaxDay (year, month) {
 // 去0
 function trimZero (val) {
     val = String(val)
-    val = val ? parseFloat(val.replace(/^0+/g, '')) : ''
+    val = val ? parseInt(val.replace(/^0+/g, '')) : ''
     val = val || 0
     val = val + ''
     return val
@@ -82,7 +82,7 @@ function nextDayLeave(startDay, endDay, startNoon, endNoon) {
     // 四种情况
             
     let leaveDays = 0
-    if (startNoon === '上午' && endNoon === '上午') {
+    if (startNoon === endNoon) {
         leaveDays = endDay - startDay + 0.5 
     } 
     else if (startNoon === '上午' && endNoon === '下午') {
@@ -90,9 +90,6 @@ function nextDayLeave(startDay, endDay, startNoon, endNoon) {
     } 
     else if (startNoon === '下午' && endNoon === '上午') {
         leaveDays = endDay - startDay
-    } 
-    else if (startNoon === '下午' && endNoon === '下午') {
-        leaveDays = endDay - startDay + 0.5
     }
     return leaveDays
 }

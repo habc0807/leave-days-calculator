@@ -1,14 +1,19 @@
 {
   "name": "leave-days-calculator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "一个简单的请假天数计算器",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c"
   },
   "author": "habc0807",
   "license": "ISC",
   "homepage": "https://github.com/habc0807/leave-days-calculator#readme",
   "_from": "leave-days-calculator@1.0.0",
-  "_resolved": "https://registry.npm.taobao.org/leave-days-calculator/download/leave-days-calculator-1.0.0.tgz"
+  "_resolved": "https://registry.npm.taobao.org/leave-days-calculator/download/leave-days-calculator-1.0.0.tgz",
+  "devDependencies": {
+    "rollup": "^1.29.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-terser": "^5.2.0"
+  }
 }
